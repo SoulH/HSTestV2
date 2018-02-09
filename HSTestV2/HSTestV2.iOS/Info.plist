@@ -50,5 +50,11 @@
 	<string>LaunchScreen</string>
 	<key>CFBundleName</key>
 	<string>HSTestV2</string>
+	<key>CFBundleLocalizations</key>
+	<array>
+		<string>es</string>
+	</array>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>en</string>
 </dict>
 </plist>

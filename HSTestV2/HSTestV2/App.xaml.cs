@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HSTestV2.Views;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,7 +14,7 @@ namespace HSTestV2
 		{
 			InitializeComponent();
 
-			MainPage = new HSTestV2.MainPage();
+            MainPage = new MainPage(); // new NavigationPage(new LoginPage());
 		}
 
 		protected override void OnStart ()
