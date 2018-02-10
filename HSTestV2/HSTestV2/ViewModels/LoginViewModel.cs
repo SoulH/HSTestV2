@@ -14,42 +14,51 @@ namespace HSTestV2.ViewModels
         #endregion
 
         #region Properties
-        private string _user;
+        private string user;
         public string User
         {
-            get { return _user; }
-            set { SetProperty(ref _user, value); }
+            get { return user; }
+            set { SetProperty(ref user, value); }
         }
 
-        private string _password;
+        private string password;
         public string Password
         {
-            get { return _password; }
-            set { SetProperty(ref _password, value); }
+            get { return password; }
+            set { SetProperty(ref password, value); }
         }
 
-        private string _message;
+        private string message;
         public string Message
         {
-            get { return _message; }
-            set { SetProperty(ref _message, value); }
+            get { return message; }
+            set { SetProperty(ref message, value); }
         }
 
-        private bool _remember;
-        public bool Remember
+        private bool show;
+        public bool Show
         {
-            get { return _remember; }
-            set { SetProperty(ref _remember, value); }
+            get { return show; }
+            set { SetProperty(ref show, value); }
+        }
+
+        private bool rememberMe;
+        public bool RememberMe
+        {
+            get { return rememberMe; }
+            set { SetProperty(ref rememberMe, value); }
         }
         #endregion
 
         public LoginViewModel()
         {
             LoginCommand = new Command(Login);
-            _user = string.Empty;
-            _password = string.Empty;
-            _remember = true;
-            Message = string.Empty;
+            user = string.Empty;
+            password = string.Empty;
+            rememberMe = true;
+            message = "prueba";
+            IsBusy = true;
+            show = false;
         }
 
         public async void Login()
@@ -58,17 +67,17 @@ namespace HSTestV2.ViewModels
             Title = string.Empty;
             try
             {
-                if (!string.IsNullOrEmpty(_user.Trim()))
+                if (!string.IsNullOrEmpty(user.Trim()))
                 {
-                    if (!string.IsNullOrEmpty(_password.Trim()))
+                    if (!string.IsNullOrEmpty(password.Trim()))
                     {
                         //var context = new DbContext();
-                        var usr = new { User = "Guest", Password = "12345", Email = "anemailname@example.com" };
+                        var usr = new { Id = 1, User = "Guest", Password = "12345", Email = "anemailname@example.com" };
                         //context.Users.Where(f => f.Name.Equals(_user) || f.Email.Equals(_user)).FirstOrDefault();
 
-                        if (usr?.Password == _password)
+                        if (usr?.Password == password)
                         {
-                            Settings.IsLoggedIn = true;
+                            Settings.IsLoggedIn = usr.Id;
                             await NavigationService.ChangeToPageAsync(new MainPage());
                         }
                         else

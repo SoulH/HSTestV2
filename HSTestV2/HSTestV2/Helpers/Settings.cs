@@ -18,7 +18,7 @@ namespace HSTestV2.Helpers
         private const string SettingsKey = "settings_key";
         private static readonly string SettingsDefault = string.Empty;
         private const string IsLoggedInTokenKey = "isloggedid_key";
-        private static readonly bool IsLoggedInTokenDefault = false;
+        private static readonly int IsLoggedInTokenDefault = -1;
 
         #endregion
 
@@ -35,7 +35,7 @@ namespace HSTestV2.Helpers
             }
         }
 
-        public static bool IsLoggedIn
+        public static int IsLoggedIn
         {
             get { return AppSettings.GetValueOrDefault(IsLoggedInTokenKey, IsLoggedInTokenDefault); }
             set { AppSettings.AddOrUpdateValue(IsLoggedInTokenKey, value); }

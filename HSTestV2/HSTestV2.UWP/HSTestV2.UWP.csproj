@@ -104,6 +104,14 @@
     <None Include="HSTestV2.UWP_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="app_logo.png" />
+    <Content Include="facebook_icon.png" />
+    <Content Include="google_icon.png" />
+    <Content Include="ic_account_box_black_24dp_1x.png" />
+    <Content Include="ic_account_box_black_24dp_2x.png" />
+    <Content Include="ic_lock_black_24dp_1x.png" />
+    <Content Include="ic_lock_black_24dp_2x.png" />
+    <Content Include="loading.gif" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-100.png" />
     <Content Include="Assets\LockScreenLogo.scale-125.png" />

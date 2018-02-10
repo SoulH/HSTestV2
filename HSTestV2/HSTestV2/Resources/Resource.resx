@@ -120,11 +120,32 @@
   <data name="Accept" xml:space="preserve">
     <value>Accept</value>
   </data>
+  <data name="Login" xml:space="preserve">
+    <value>Sign In</value>
+  </data>
   <data name="No" xml:space="preserve">
     <value>No</value>
   </data>
+  <data name="PhPassword" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="PhUser" xml:space="preserve">
+    <value>Email or Username</value>
+  </data>
+  <data name="RecoverPassword" xml:space="preserve">
+    <value>Forgot password?</value>
+  </data>
+  <data name="RememberMe" xml:space="preserve">
+    <value>Remember me</value>
+  </data>
+  <data name="SignInFacebook" xml:space="preserve">
+    <value>Sign In With Facebook</value>
+  </data>
+  <data name="SignInGoogle" xml:space="preserve">
+    <value>Sing In With Google</value>
+  </data>
   <data name="Title" xml:space="preserve">
-    <value>Hispano Solutiones</value>
+    <value>Hispanos Soluciones</value>
   </data>
   <data name="Yes" xml:space="preserve">
     <value>Yes</value>

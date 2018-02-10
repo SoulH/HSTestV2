@@ -70,6 +70,15 @@ namespace HSTestV2.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Sign In.
+        /// </summary>
+        internal static string Login {
+            get {
+                return ResourceManager.GetString("Login", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a No.
         /// </summary>
         internal static string No {
@@ -79,7 +88,61 @@ namespace HSTestV2.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Hispano Solutiones.
+        ///   Busca una cadena traducida similar a Password.
+        /// </summary>
+        internal static string PhPassword {
+            get {
+                return ResourceManager.GetString("PhPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Email or Username.
+        /// </summary>
+        internal static string PhUser {
+            get {
+                return ResourceManager.GetString("PhUser", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Forgot password?.
+        /// </summary>
+        internal static string RecoverPassword {
+            get {
+                return ResourceManager.GetString("RecoverPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Remember me.
+        /// </summary>
+        internal static string RememberMe {
+            get {
+                return ResourceManager.GetString("RememberMe", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Sign In With Facebook.
+        /// </summary>
+        internal static string SignInFacebook {
+            get {
+                return ResourceManager.GetString("SignInFacebook", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Sing In With Google.
+        /// </summary>
+        internal static string SignInGoogle {
+            get {
+                return ResourceManager.GetString("SignInGoogle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Hispanos Soluciones.
         /// </summary>
         internal static string Title {
             get {

@@ -4,12 +4,129 @@
              xmlns:i18n="clr-namespace:HSTestV2.Helpers"
              x:Class="HSTestV2.Views.LoginPage"
              BindingContext="{Binding Login, Source={StaticResource Locator}}"
-             Title="{i18n:Translate Title}">
+             Title="{i18n:Translate Title}"
+             BackgroundColor="{StaticResource BackgroundColorPage}">
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness"
+            iOS="20,0,20,10"
+            Android="20,20,20,10"/>
+    </ContentPage.Padding>
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <ScrollView>
+            <StackLayout>
+                <Grid IsVisible="{Binding Show}"
+                  HorizontalOptions="FillAndExpand">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="25"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="8*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Text="{Binding Message}"
+                           TextColor="{StaticResource Accent}"
+                           Grid.Row="0"
+                           Grid.Column="0"/>
+                    <ActivityIndicator IsRunning="{Binding IsBusy}"
+                                       Color="{StaticResource Primary}"
+                                       Grid.Row="0"
+                                       Grid.Column="1"/>
+                </Grid>
+                
+                <Image Source="app_logo.png"
+                       HorizontalOptions="Center"
+                       HeightRequest="200"/>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="50"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="40"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Image Source="ic_account_box_black_24dp.png"
+                           Grid.Row="0"
+                           Grid.Column="0"/>
+                    <Entry Placeholder="{i18n:Translate PhUser}"
+                       Text="{Binding User}"
+                           Grid.Row="0"
+                           Grid.Column="1"
+                           Grid.ColumnSpan="2"/>
+
+                    <Image Source="ic_lock_black_24dp.png"
+                           Grid.Row="1"
+                           Grid.Column="0"/>
+                    <Entry Placeholder="{i18n:Translate PhPassword}"
+                           Text="{Binding Password}"
+                           IsPassword="True"
+                           Grid.Row="1"
+                           Grid.Column="1"
+                           Grid.ColumnSpan="2"/>
+                    
+                    <Switch IsToggled="{Binding RememberMe}"
+                            Grid.Row="2"
+                            Grid.Column="0"/>
+                    <Label Text="{i18n:Translate RememberMe}"
+                           HorizontalOptions="Start"
+                           VerticalTextAlignment="Center"
+                           Grid.Row="2"
+                           Grid.Column="1"/>
+                    <Label Text="{i18n:Translate RecoverPassword}"
+                           TextColor="{StaticResource Primary}"
+                           FontAttributes="Italic"
+                           HorizontalOptions="FillAndExpand"
+                           HorizontalTextAlignment="End"
+                           VerticalTextAlignment="Center"
+                           Grid.Row="2"
+                           Grid.Column="2">
+                           <Label.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding RecoverPasswordCommand}"/>
+                            </Label.GestureRecognizers>
+                    </Label>
+                </Grid>
+               
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="60"/>
+                        <RowDefinition Height="60"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Button Text="{i18n:Translate Login}"
+                            Command="{Binding LoginCommand}"
+                            BackgroundColor="{StaticResource Accent}"
+                            TextColor="White"
+                            FontAttributes="Bold"
+                            FontSize="Large"
+                            Grid.Row="0"
+                            Grid.Column="0"
+                            Grid.ColumnSpan="2"/>
+                    <Button Text="{i18n:Translate Login}"
+                            Command="{Binding SingInGoogleCommand}"
+                            Image="google_icon.png"
+                            FontAttributes="Bold"
+                            FontSize="Medium"
+                            BackgroundColor="White"
+                            Grid.Row="1"
+                            Grid.Column="0"/>
+                    <Button Text="{i18n:Translate Login}"
+                            Command="{Binding SinInFacebookCommand}"
+                            Image="facebook_icon.png"
+                            FontAttributes="Bold"
+                            FontSize="Medium"
+                            BackgroundColor="#3B5998"
+                            TextColor="White"
+                            Grid.Row="1"
+                            Grid.Column="1"/>
+                </Grid>
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

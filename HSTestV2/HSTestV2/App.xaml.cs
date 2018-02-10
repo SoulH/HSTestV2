@@ -1,4 +1,5 @@
-﻿using HSTestV2.Views;
+﻿using HSTestV2.Helpers;
+using HSTestV2.Views;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,9 +14,20 @@ namespace HSTestV2
 		public App ()
 		{
 			InitializeComponent();
-
-            MainPage = new MainPage(); // new NavigationPage(new LoginPage());
-		}
+            //new DbContext().Migrate();
+            Settings.IsLoggedIn = -1;
+            if (Settings.IsLoggedIn > 0)
+            {
+                MainPage = new MainPage();
+            }
+            else
+            {
+                MainPage = new NavigationPage(new LoginPage())
+                {
+                    BarBackgroundColor = Color.FromHex("#FCAC0C")
+                };
+            }
+        }
 
 		protected override void OnStart ()
 		{

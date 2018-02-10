@@ -8,6 +8,16 @@
         <ResourceDictionary>
             <!-- Locator -->
             <infra:InstanceLocator x:Key="Locator"/>
+            <!-- Colors -->
+            <Color x:Key="Primary">#FCAC0C</Color>
+            <Color x:Key="PrimaryDark">#BF9200</Color>
+            <Color x:Key="Accent">#EE046C</Color>
+            <Color x:Key="BackgroundColorPage">#ECECEC</Color>
+            <Color x:Key="TextColor">#3E3E3E</Color>
+            <Color x:Key="Orange">#FF5733</Color>
+            <Color x:Key="Red">#C70039</Color>
+            <Color x:Key="Violet">#990C3F</Color>
+            <Color x:Key="DarkViolet">#581845</Color>
         </ResourceDictionary>
     </Application.Resources>
 </Application>
