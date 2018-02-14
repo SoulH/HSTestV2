@@ -11,6 +11,11 @@
             iOS="20,0,20,10"
             Android="20,20,20,10"/>
     </ContentPage.Padding>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="{i18n:Translate Register}" 
+                     Command="{Binding RegisterCommand}"
+                     />
+    </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <ScrollView>
             <StackLayout>

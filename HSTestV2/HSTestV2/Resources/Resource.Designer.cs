@@ -70,7 +70,7 @@ namespace HSTestV2.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Sign In.
+        ///   Busca una cadena traducida similar a Login.
         /// </summary>
         internal static string Login {
             get {
@@ -111,6 +111,15 @@ namespace HSTestV2.Resources {
         internal static string RecoverPassword {
             get {
                 return ResourceManager.GetString("RecoverPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Sign In.
+        /// </summary>
+        internal static string Register {
+            get {
+                return ResourceManager.GetString("Register", resourceCulture);
             }
         }
         

@@ -117,40 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Accept" xml:space="preserve">
-    <value>Aceptar</value>
+  <data name="Target" xml:space="preserve">
+    <value>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</value>
   </data>
-  <data name="Login" xml:space="preserve">
-    <value>Iniciar Sesión</value>
-  </data>
-  <data name="No" xml:space="preserve">
-    <value>No</value>
-  </data>
-  <data name="PhPassword" xml:space="preserve">
-    <value>Contraseña</value>
-  </data>
-  <data name="PhUser" xml:space="preserve">
-    <value>Email ó Usuario</value>
-  </data>
-  <data name="RecoverPassword" xml:space="preserve">
-    <value>¿Olvidó su contraseña?</value>
-  </data>
-  <data name="Register" xml:space="preserve">
-    <value>Registrarse</value>
-  </data>
-  <data name="RememberMe" xml:space="preserve">
-    <value>Recuérdame</value>
-  </data>
-  <data name="SignInFacebook" xml:space="preserve">
-    <value>Iniciar Sesión Con Facebook</value>
-  </data>
-  <data name="SignInGoogle" xml:space="preserve">
-    <value>Iniciar Sesión Con Google</value>
-  </data>
-  <data name="Title" xml:space="preserve">
-    <value>Hispanos Soluciones</value>
-  </data>
-  <data name="Yes" xml:space="preserve">
-    <value>Sí</value>
+  <data name="DefaultSchema" xml:space="preserve">
+    <value>dbo</value>
   </data>
 </root>
