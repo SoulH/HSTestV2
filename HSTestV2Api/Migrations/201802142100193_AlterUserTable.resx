@@ -117,61 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Accept" xml:space="preserve">
-    <value>Accept</value>
+  <data name="Target" xml:space="preserve">
+    <value>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</value>
   </data>
-  <data name="BtnClear" xml:space="preserve">
-    <value>Reset</value>
-  </data>
-  <data name="Login" xml:space="preserve">
-    <value>Login</value>
-  </data>
-  <data name="No" xml:space="preserve">
-    <value>No</value>
-  </data>
-  <data name="PhConfirmPassword" xml:space="preserve">
-    <value>Entry passwod again</value>
-  </data>
-  <data name="PhEmail" xml:space="preserve">
-    <value>Email</value>
-  </data>
-  <data name="PhFirstName" xml:space="preserve">
-    <value>FirsName</value>
-  </data>
-  <data name="PhLastName" xml:space="preserve">
-    <value>LastName</value>
-  </data>
-  <data name="PhPassword" xml:space="preserve">
-    <value>Password</value>
-  </data>
-  <data name="PhPhone" xml:space="preserve">
-    <value>Phone number</value>
-  </data>
-  <data name="PhUser" xml:space="preserve">
-    <value>Username</value>
-  </data>
-  <data name="PhUserEmail" xml:space="preserve">
-    <value>Email or Username</value>
-  </data>
-  <data name="RecoverPassword" xml:space="preserve">
-    <value>Forgot password?</value>
-  </data>
-  <data name="Register" xml:space="preserve">
-    <value>Sign In</value>
-  </data>
-  <data name="RememberMe" xml:space="preserve">
-    <value>Remember me</value>
-  </data>
-  <data name="SignInFacebook" xml:space="preserve">
-    <value>Sign In With Facebook</value>
-  </data>
-  <data name="SignInGoogle" xml:space="preserve">
-    <value>Sing In With Google</value>
-  </data>
-  <data name="Title" xml:space="preserve">
-    <value>Hispanos Soluciones</value>
-  </data>
-  <data name="Yes" xml:space="preserve">
-    <value>Yes</value>
+  <data name="DefaultSchema" xml:space="preserve">
+    <value>dbo</value>
   </data>
 </root>

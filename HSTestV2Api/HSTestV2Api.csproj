@@ -222,6 +222,10 @@
     <Compile Include="Migrations\201802142024298_Initial.Designer.cs">
       <DependentUpon>201802142024298_Initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201802142100193_AlterUserTable.cs" />
+    <Compile Include="Migrations\201802142100193_AlterUserTable.Designer.cs">
+      <DependentUpon>201802142100193_AlterUserTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Models\AuthRepository.cs" />
@@ -252,6 +256,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201802142024298_Initial.resx">
       <DependentUpon>201802142024298_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802142100193_AlterUserTable.resx">
+      <DependentUpon>201802142100193_AlterUserTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

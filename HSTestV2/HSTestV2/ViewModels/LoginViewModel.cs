@@ -10,7 +10,9 @@ namespace HSTestV2.ViewModels
     public class LoginViewModel : BaseViewModel
     {
         #region Commands
-        public ICommand LoginCommand { get; set; }
+        public ICommand LoginCommand { get; private set; }
+
+        public ICommand RegisterCommand { get; private set; }
         #endregion
 
         #region Properties
@@ -48,11 +50,14 @@ namespace HSTestV2.ViewModels
             get { return rememberMe; }
             set { SetProperty(ref rememberMe, value); }
         }
+
+        private INavigation nav;
         #endregion
 
         public LoginViewModel()
         {
             LoginCommand = new Command(Login);
+            RegisterCommand = new Command(async () => await NavigationService.PushAsync(new RegisterPage()));
             user = string.Empty;
             password = string.Empty;
             rememberMe = true;
@@ -61,6 +66,20 @@ namespace HSTestV2.ViewModels
             show = false;
         }
 
+        public LoginViewModel(INavigation nav)
+        {
+            LoginCommand = new Command(Login);
+            RegisterCommand = new Command(async () => await NavigationService.PushAsync(new RegisterPage()));
+            user = string.Empty;
+            password = string.Empty;
+            rememberMe = true;
+            message = "prueba";
+            IsBusy = true;
+            show = false;
+            this.nav = nav;
+        }
+
+        #region methods
         public async void Login()
         {
             IsBusy = true;
@@ -106,5 +125,6 @@ namespace HSTestV2.ViewModels
                 await App.Current.MainPage.DisplayAlert("Error de conexión", e.Message, "Ok");
             }
         }
+        #endregion
     }
 }

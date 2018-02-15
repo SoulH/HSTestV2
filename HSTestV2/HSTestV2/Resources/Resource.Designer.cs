@@ -70,6 +70,15 @@ namespace HSTestV2.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Reset.
+        /// </summary>
+        internal static string BtnClear {
+            get {
+                return ResourceManager.GetString("BtnClear", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Login.
         /// </summary>
         internal static string Login {
@@ -88,6 +97,42 @@ namespace HSTestV2.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Entry passwod again.
+        /// </summary>
+        internal static string PhConfirmPassword {
+            get {
+                return ResourceManager.GetString("PhConfirmPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Email.
+        /// </summary>
+        internal static string PhEmail {
+            get {
+                return ResourceManager.GetString("PhEmail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a FirsName.
+        /// </summary>
+        internal static string PhFirstName {
+            get {
+                return ResourceManager.GetString("PhFirstName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a LastName.
+        /// </summary>
+        internal static string PhLastName {
+            get {
+                return ResourceManager.GetString("PhLastName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Password.
         /// </summary>
         internal static string PhPassword {
@@ -97,11 +142,29 @@ namespace HSTestV2.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Email or Username.
+        ///   Busca una cadena traducida similar a Phone number.
+        /// </summary>
+        internal static string PhPhone {
+            get {
+                return ResourceManager.GetString("PhPhone", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Username.
         /// </summary>
         internal static string PhUser {
             get {
                 return ResourceManager.GetString("PhUser", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Email or Username.
+        /// </summary>
+        internal static string PhUserEmail {
+            get {
+                return ResourceManager.GetString("PhUserEmail", resourceCulture);
             }
         }
         

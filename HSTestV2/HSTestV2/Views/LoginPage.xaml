@@ -57,7 +57,7 @@
                     <Image Source="ic_account_box_black_24dp.png"
                            Grid.Row="0"
                            Grid.Column="0"/>
-                    <Entry Placeholder="{i18n:Translate PhUser}"
+                    <Entry Placeholder="{i18n:Translate PhUserEmail}"
                        Text="{Binding User}"
                            Grid.Row="0"
                            Grid.Column="1"

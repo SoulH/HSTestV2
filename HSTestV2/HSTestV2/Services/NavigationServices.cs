@@ -9,12 +9,8 @@ namespace HSTestV2.Services
         {
             var nav = App.Current.MainPage.Navigation;
             var count = nav.NavigationStack.Count;
-            await nav.PushAsync(page);
-            for (var i = 0; i < count; i++)
-            {
-                var p = nav.NavigationStack[i];
-                nav.RemovePage(p);
-            }
+            nav.InsertPageBefore(page, nav.NavigationStack[0]);
+            await nav.PopToRootAsync();
         }
 
         public static async Task PushAsync(Page page)

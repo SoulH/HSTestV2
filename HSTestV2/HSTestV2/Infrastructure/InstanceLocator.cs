@@ -4,13 +4,8 @@ namespace HSTestV2.Infrastructure
 {
     public class InstanceLocator
     {
-        public MainViewModel Main { get; set; }
-        public LoginViewModel Login { get; set; }
-
-        public InstanceLocator()
-        {
-            Main = new MainViewModel();
-            Login = new LoginViewModel();
-        }
+        public MainViewModel Main { get { return new MainViewModel(); } }
+        public LoginViewModel Login { get { return new LoginViewModel(); } }
+        public RegisterViewModel Register { get { return new RegisterViewModel(); } }
     }
 }

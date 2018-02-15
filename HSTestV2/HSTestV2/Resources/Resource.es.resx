@@ -120,16 +120,37 @@
   <data name="Accept" xml:space="preserve">
     <value>Aceptar</value>
   </data>
+  <data name="BtnClear" xml:space="preserve">
+    <value>Reset</value>
+  </data>
   <data name="Login" xml:space="preserve">
     <value>Iniciar Sesión</value>
   </data>
   <data name="No" xml:space="preserve">
     <value>No</value>
   </data>
+  <data name="PhConfirmPassword" xml:space="preserve">
+    <value>Repite la contraseña</value>
+  </data>
+  <data name="PhEmail" xml:space="preserve">
+    <value>Correo electrónico</value>
+  </data>
+  <data name="PhFirstName" xml:space="preserve">
+    <value>Nombres</value>
+  </data>
+  <data name="PhLastName" xml:space="preserve">
+    <value>Apellidos</value>
+  </data>
   <data name="PhPassword" xml:space="preserve">
     <value>Contraseña</value>
   </data>
+  <data name="PhPhone" xml:space="preserve">
+    <value>Número de telefono</value>
+  </data>
   <data name="PhUser" xml:space="preserve">
+    <value>Usuario</value>
+  </data>
+  <data name="PhUserEmail" xml:space="preserve">
     <value>Email ó Usuario</value>
   </data>
   <data name="RecoverPassword" xml:space="preserve">

@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:i18n="clr-namespace:HSTestV2.Helpers"
+             x:Class="HSTestV2.Views.RegisterPage"
+             BindingContext="{Binding Register, Source={StaticResource Locator}}"
+             Title="{i18n:Translate Register}"
+             BackgroundColor="{StaticResource BackgroundColorPage}">
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness"
+            iOS="20,0,20,10"
+            Android="20,20,20,10"/>
+    </ContentPage.Padding>
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <Grid IsVisible="{Binding Show}"
+                  HorizontalOptions="FillAndExpand">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="25"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="8*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Text="{Binding Message}"
+                           TextColor="{StaticResource Accent}"
+                           Grid.Row="0"
+                           Grid.Column="0"/>
+                    <ActivityIndicator IsRunning="{Binding IsBusy}"
+                                       Color="{StaticResource Primary}"
+                                       Grid.Row="0"
+                                       Grid.Column="1"/>
+                </Grid>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Image Source="ic_account_box_black_24dp.png"
+                           Grid.Row="0"
+                           Grid.Column="0"/>
+                    <Entry Placeholder="{i18n:Translate PhUser}"
+                       Text="{Binding User, Mode=TwoWay}"
+                           Grid.Row="0"
+                           Grid.Column="1"
+                           Grid.ColumnSpan="3"/>
+                    <Image Source="ic_account_box_black_24dp.png"
+                           Grid.Row="1"
+                           Grid.Column="0"/>
+                    <Entry Placeholder="{i18n:Translate PhFirstName}"
+                       Text="{Binding FirstName, Mode=TwoWay}"
+                           Grid.Row="1"
+                           Grid.Column="1"
+                           Grid.ColumnSpan="3"/>
+                    <Image Source="ic_account_box_black_24dp.png"
+                           Grid.Row="2"
+                           Grid.Column="0"/>
+                    <Entry Placeholder="{i18n:Translate PhLastName}"
+                       Text="{Binding LastName, Mode=TwoWay}"
+                           Grid.Row="2"
+                           Grid.Column="1"
+                           Grid.ColumnSpan="3"/>
+                    <Image Source="ic_account_box_black_24dp.png"
+                           Grid.Row="3"
+                           Grid.Column="0"/>
+                    <Entry Placeholder="{i18n:Translate PhEmail}"
+                       Text="{Binding Email, Mode=TwoWay}"
+                           Grid.Row="3"
+                           Grid.Column="1"
+                           Grid.ColumnSpan="3"/>
+                    <Image Source="ic_account_box_black_24dp.png"
+                           Grid.Row="4"
+                           Grid.Column="0"/>
+                    <Entry Placeholder="{i18n:Translate PhPhone}"
+                       Text="{Binding Phone, Mode=TwoWay}"
+                           Grid.Row="4"
+                           Grid.Column="1"
+                           Grid.ColumnSpan="3"/>
+                    <Image Source="ic_account_box_black_24dp.png"
+                           Grid.Row="5"
+                           Grid.Column="0"/>
+                    <Entry Placeholder="{i18n:Translate PhPassword}"
+                        Text="{Binding Password, Mode=TwoWay}"
+                           Grid.Row="5"
+                           Grid.Column="1"
+                           Grid.ColumnSpan="3"/>
+                    <Image Source="ic_account_box_black_24dp.png"
+                           Grid.Row="6"
+                           Grid.Column="0"/>
+                    <Entry Placeholder="{i18n:Translate PhConfirmPassword}"
+                       Text="{Binding ConfirmPassword, Mode=TwoWay}"
+                           Grid.Row="6"
+                           Grid.Column="1"
+                           Grid.ColumnSpan="3"/>
+                    <Button Text="{i18n:Translate Register}"
+                            BackgroundColor="{StaticResource Accent}"
+                            Command="{Binding RegisterCommand}"
+                            TextColor="White"
+                            FontAttributes="Bold"
+                            Grid.Row="8"
+                            Grid.Column="0"
+                            Grid.ColumnSpan="2"/>
+                    <Button Text="{i18n:Translate BtnClear}"
+                            Command="{Binding ResetCommand}"
+                            Grid.Row="8"
+                            Grid.Column="2"
+                            Grid.ColumnSpan="2"/>
+                </Grid>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
