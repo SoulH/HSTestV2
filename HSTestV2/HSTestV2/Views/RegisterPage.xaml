@@ -15,7 +15,7 @@
         <ScrollView>
             <StackLayout>
                 <Grid IsVisible="{Binding Show}"
-                  HorizontalOptions="FillAndExpand">
+                      HorizontalOptions="FillAndExpand">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="25"/>
                     </Grid.RowDefinitions>
@@ -78,7 +78,7 @@
                            Grid.Row="3"
                            Grid.Column="0"/>
                     <Entry Placeholder="{i18n:Translate PhEmail}"
-                       Text="{Binding Email, Mode=TwoWay}"
+                           Text="{Binding Email, Mode=TwoWay}"
                            Grid.Row="3"
                            Grid.Column="1"
                            Grid.ColumnSpan="3"/>
@@ -94,7 +94,8 @@
                            Grid.Row="5"
                            Grid.Column="0"/>
                     <Entry Placeholder="{i18n:Translate PhPassword}"
-                        Text="{Binding Password, Mode=TwoWay}"
+                           Text="{Binding Password, Mode=TwoWay}"
+                           IsPassword="true"
                            Grid.Row="5"
                            Grid.Column="1"
                            Grid.ColumnSpan="3"/>
@@ -102,7 +103,8 @@
                            Grid.Row="6"
                            Grid.Column="0"/>
                     <Entry Placeholder="{i18n:Translate PhConfirmPassword}"
-                       Text="{Binding ConfirmPassword, Mode=TwoWay}"
+                           Text="{Binding ConfirmPassword, Mode=TwoWay}"
+                           IsPassword="True"
                            Grid.Row="6"
                            Grid.Column="1"
                            Grid.ColumnSpan="3"/>

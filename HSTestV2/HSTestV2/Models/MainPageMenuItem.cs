@@ -1,10 +1,11 @@
-﻿using System;
+﻿using HSTestV2.Views;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HSTestV2.Views
+namespace HSTestV2.Models
 {
 
     public class MainPageMenuItem

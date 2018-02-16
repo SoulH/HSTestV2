@@ -35,6 +35,7 @@ namespace HSTestV2.ViewModels
         }
 
         private string user;
+        [JsonProperty(PropertyName = "UserName")]
         public string User
         {
             get { return user; }
@@ -109,6 +110,11 @@ namespace HSTestV2.ViewModels
         public async Task Register()
         {
             var response = await ApiService.SignIn(this);
+            if (response.Success)
+            {
+                await DialogService.ShowMessage("Aviso", "Usuario creado satisfactoriamente");
+                await NavigationService.PopAsync();
+            }
         }
         #endregion
     }
