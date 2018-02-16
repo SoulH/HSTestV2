@@ -15,8 +15,7 @@ namespace HSTestV2
 		{
 			InitializeComponent();
             //new DbContext().Migrate();
-            Settings.IsLoggedIn = -1;
-            if (Settings.IsLoggedIn > 0)
+            if (!string.IsNullOrEmpty(Settings.IsLoggedIn))
             {
                 MainPage = new MainPage();
             }

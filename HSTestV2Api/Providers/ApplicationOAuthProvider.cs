@@ -7,6 +7,7 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.OAuth;
+using HSTestV2Api.Extensions;
 
 namespace HSTestV2Api.Providers
 {
@@ -27,8 +28,15 @@ namespace HSTestV2Api.Providers
         public override async Task GrantResourceOwnerCredentials(OAuthGrantResourceOwnerCredentialsContext context)
         {
             var userManager = context.OwinContext.GetUserManager<ApplicationUserManager>();
+            var name = (context.UserName.IsEmail()) ? userManager.FindByEmailAsync(context.UserName).Result?.UserName : context.UserName;
 
-            ApplicationUser user = await userManager.FindAsync(context.UserName, context.Password);
+            if (context.UserName.IsEmail() && string.IsNullOrEmpty(name))
+            {
+                context.SetError("invalid_grant", "Wrong username or password");
+                return;
+            }
+
+            ApplicationUser user = await userManager.FindAsync(name, context.Password);
 
             if (user == null)
             {

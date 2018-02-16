@@ -1,6 +1,9 @@
-﻿using System;
+﻿using HSTestV2.Services;
+using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
 
@@ -9,8 +12,10 @@ namespace HSTestV2.ViewModels
     public class RegisterViewModel : BaseViewModel
     {
         #region commands
+        [JsonIgnore]
         public ICommand RegisterCommand { get; private set; }
 
+        [JsonIgnore]
         public ICommand ResetCommand { get; private set; }
         #endregion
 
@@ -72,6 +77,7 @@ namespace HSTestV2.ViewModels
         }
 
         private bool show;
+        [JsonIgnore]
         public bool Show
         {
             get { return show; }
@@ -81,7 +87,7 @@ namespace HSTestV2.ViewModels
 
         public RegisterViewModel()
         {
-            RegisterCommand = new Command(Register);
+            RegisterCommand = new Command(async () => await Register());
             ResetCommand = new Command(Reset);
             Show = false;
             Message = string.Empty;
@@ -100,9 +106,9 @@ namespace HSTestV2.ViewModels
             Email = string.Empty;
         }
 
-        public void Register()
+        public async Task Register()
         {
-
+            var response = await ApiService.SignIn(this);
         }
         #endregion
     }

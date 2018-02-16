@@ -1,4 +1,5 @@
 ﻿using HSTestV2Api.Models;
+using HSTestV2Api.Models.ApiResponses;
 using HSTestV2Api.ViewModels;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
@@ -11,6 +12,7 @@ using System.Security.Cryptography;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Http;
+using System.Linq;
 
 namespace HSTestV2Api.Controllers
 {
@@ -18,6 +20,10 @@ namespace HSTestV2Api.Controllers
     public class AccountController : ApiController
     {
         private ApplicationUserManager _userManager = null;
+
+        public AccountController()
+        {
+        }
 
         public AccountController(ApplicationUserManager userManager)
         {
@@ -43,17 +49,36 @@ namespace HSTestV2Api.Controllers
         {
             if (!ModelState.IsValid)
             {
-                return BadRequest(ModelState);
+                if (ModelState.Keys.Count > 1)
+                {
+                    var listerrors = ModelState.Values.Select(f => f.Errors.Select(g => g.ErrorMessage)).ToList();
+                    List<string> errors = new List<string>();
+                    listerrors.ForEach(f => errors = new List<string>(errors.Concat(f)));
+                    return Json(ErrorListResponse.Http400(errors));
+                }
+                else
+                {
+                    var errors = ModelState.Values.FirstOrDefault()?.Errors.Select(f => f.ErrorMessage);
+                    return Json(ErrorListResponse.Http400(errors));
+                }
+                    
             }
-            var user = new ApplicationUser() { UserName = model.UserName, Email = model.Email };
-            IdentityResult result = await _userManager.CreateAsync(user, model.Password);
+            var user = new ApplicationUser()
+            {
+                UserName = model.UserName,
+                Email = model.Email,
+                PhoneNumber = model.Phone,
+                Firstname = model.FirstName,
+                LastName = model.LastName
+            };
+            IdentityResult result = await UserManager.CreateAsync(user, model.Password);
 
             if (!result.Succeeded)
             {
                 return GetErrorResult(result);
             }
 
-            return Ok();
+            return Json(Response.Ok());
         }
 
         protected override void Dispose(bool disposing)
@@ -78,7 +103,7 @@ namespace HSTestV2Api.Controllers
         {
             if (result == null)
             {
-                return InternalServerError();
+                return Json(ErrorResponse.Http500("Unexpected error has happened"));
             }
 
             if (!result.Succeeded)
@@ -94,10 +119,12 @@ namespace HSTestV2Api.Controllers
                 if (ModelState.IsValid)
                 {
                     // No hay disponibles errores ModelState para enviar, por lo que simplemente devuelva un BadRequest vacío.
-                    return BadRequest();
+                    return Json(ErrorResponse.Http400());
                 }
 
-                return BadRequest(ModelState);
+                var errors = result.Errors.FirstOrDefault().Split('.').Select(f => f.Trim()).Where(f => !string.IsNullOrEmpty(f)).ToList();
+
+                return Json(ErrorListResponse.Http400(errors));
             }
 
             return null;

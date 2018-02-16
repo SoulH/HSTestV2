@@ -22,7 +22,7 @@ namespace HSTestV2Api
             PublicClientId = "self";
             OAuthAuthorizationServerOptions OAuthServerOptions = new OAuthAuthorizationServerOptions()
             {
-                AllowInsecureHttp = false, //true
+                AllowInsecureHttp = true,
                 TokenEndpointPath = new PathString("/token"),
                 AccessTokenExpireTimeSpan = TimeSpan.FromDays(1),
                 Provider = new ApplicationOAuthProvider(PublicClientId)

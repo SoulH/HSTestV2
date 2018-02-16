@@ -4,8 +4,9 @@
                 xmlns:i18n="clr-namespace:HSTestV2.Helpers"
                 x:Class="HSTestV2.Views.MainPage"
                 xmlns:pages="clr-namespace:HSTestV2.Views"
-                BindingContext="{Binding Main, Source={StaticResource Locator}}"
-                Title="{i18n:Translate Title}">
+                NavigationPage.HasBackButton="False"
+                NavigationPage.HasNavigationBar="False"
+                BindingContext="{Binding Main, Source={StaticResource Locator}}">
   <MasterDetailPage.Master>
     <pages:MainPageMaster x:Name="MasterPage" />
   </MasterDetailPage.Master>

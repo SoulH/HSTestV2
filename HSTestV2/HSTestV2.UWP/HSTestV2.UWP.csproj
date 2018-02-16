@@ -109,8 +109,14 @@
     <Content Include="google_icon.png" />
     <Content Include="ic_account_box_black_24dp_1x.png" />
     <Content Include="ic_account_box_black_24dp_2x.png" />
+    <Content Include="ic_email_black_24dp_1x.png" />
+    <Content Include="ic_email_black_24dp_2x.png" />
     <Content Include="ic_lock_black_24dp_1x.png" />
     <Content Include="ic_lock_black_24dp_2x.png" />
+    <Content Include="ic_mode_edit_black_24dp_1x.png" />
+    <Content Include="ic_mode_edit_black_24dp_2x.png" />
+    <Content Include="ic_phone_black_24dp_1x.png" />
+    <Content Include="ic_phone_black_24dp_2x.png" />
     <Content Include="loading.gif" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-100.png" />
@@ -156,11 +162,17 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json">
+      <Version>10.0.3</Version>
+    </PackageReference>
     <PackageReference Include="RestSharp">
       <Version>106.2.1</Version>
     </PackageReference>
     <PackageReference Include="sqlite-net-pcl">
       <Version>1.4.118</Version>
+    </PackageReference>
+    <PackageReference Include="Xam.Plugin.Connectivity">
+      <Version>3.1.1</Version>
     </PackageReference>
     <PackageReference Include="Xam.Plugins.Settings">
       <Version>3.1.1</Version>

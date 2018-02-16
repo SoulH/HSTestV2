@@ -58,7 +58,7 @@
                            Grid.Row="0"
                            Grid.Column="1"
                            Grid.ColumnSpan="3"/>
-                    <Image Source="ic_account_box_black_24dp.png"
+                    <Image Source="ic_mode_edit_black_24dp.png"
                            Grid.Row="1"
                            Grid.Column="0"/>
                     <Entry Placeholder="{i18n:Translate PhFirstName}"
@@ -66,7 +66,7 @@
                            Grid.Row="1"
                            Grid.Column="1"
                            Grid.ColumnSpan="3"/>
-                    <Image Source="ic_account_box_black_24dp.png"
+                    <Image Source="ic_mode_edit_black_24dp.png"
                            Grid.Row="2"
                            Grid.Column="0"/>
                     <Entry Placeholder="{i18n:Translate PhLastName}"
@@ -74,7 +74,7 @@
                            Grid.Row="2"
                            Grid.Column="1"
                            Grid.ColumnSpan="3"/>
-                    <Image Source="ic_account_box_black_24dp.png"
+                    <Image Source="ic_email_black_24dp.png"
                            Grid.Row="3"
                            Grid.Column="0"/>
                     <Entry Placeholder="{i18n:Translate PhEmail}"
@@ -82,7 +82,7 @@
                            Grid.Row="3"
                            Grid.Column="1"
                            Grid.ColumnSpan="3"/>
-                    <Image Source="ic_account_box_black_24dp.png"
+                    <Image Source="ic_phone_black_24dp.png"
                            Grid.Row="4"
                            Grid.Column="0"/>
                     <Entry Placeholder="{i18n:Translate PhPhone}"
@@ -90,7 +90,7 @@
                            Grid.Row="4"
                            Grid.Column="1"
                            Grid.ColumnSpan="3"/>
-                    <Image Source="ic_account_box_black_24dp.png"
+                    <Image Source="ic_lock_black_24dp.png"
                            Grid.Row="5"
                            Grid.Column="0"/>
                     <Entry Placeholder="{i18n:Translate PhPassword}"
@@ -98,7 +98,7 @@
                            Grid.Row="5"
                            Grid.Column="1"
                            Grid.ColumnSpan="3"/>
-                    <Image Source="ic_account_box_black_24dp.png"
+                    <Image Source="ic_lock_black_24dp.png"
                            Grid.Row="6"
                            Grid.Column="0"/>
                     <Entry Placeholder="{i18n:Translate PhConfirmPassword}"

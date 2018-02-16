@@ -1,7 +1,10 @@
 ﻿using HSTestV2.Helpers;
 using HSTestV2.Services;
 using HSTestV2.Views;
+using Newtonsoft.Json;
 using System;
+using System.Runtime.Serialization;
+using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
 
@@ -10,13 +13,16 @@ namespace HSTestV2.ViewModels
     public class LoginViewModel : BaseViewModel
     {
         #region Commands
+        [JsonIgnore]
         public ICommand LoginCommand { get; private set; }
-
+        
+        [JsonIgnore]
         public ICommand RegisterCommand { get; private set; }
         #endregion
 
         #region Properties
         private string user;
+        //[JsonProperty(PropertyName = "user")]
         public string User
         {
             get { return user; }
@@ -24,6 +30,7 @@ namespace HSTestV2.ViewModels
         }
 
         private string password;
+        //[JsonProperty(PropertyName = "password")]
         public string Password
         {
             get { return password; }
@@ -31,6 +38,7 @@ namespace HSTestV2.ViewModels
         }
 
         private string message;
+        [JsonIgnore]
         public string Message
         {
             get { return message; }
@@ -38,6 +46,7 @@ namespace HSTestV2.ViewModels
         }
 
         private bool show;
+        [JsonIgnore]
         public bool Show
         {
             get { return show; }
@@ -45,18 +54,17 @@ namespace HSTestV2.ViewModels
         }
 
         private bool rememberMe;
+        [JsonIgnore]
         public bool RememberMe
         {
             get { return rememberMe; }
             set { SetProperty(ref rememberMe, value); }
         }
-
-        private INavigation nav;
         #endregion
 
         public LoginViewModel()
         {
-            LoginCommand = new Command(Login);
+            LoginCommand = new Command(async () => await Login());
             RegisterCommand = new Command(async () => await NavigationService.PushAsync(new RegisterPage()));
             user = string.Empty;
             password = string.Empty;
@@ -64,23 +72,10 @@ namespace HSTestV2.ViewModels
             message = "prueba";
             IsBusy = true;
             show = false;
-        }
-
-        public LoginViewModel(INavigation nav)
-        {
-            LoginCommand = new Command(Login);
-            RegisterCommand = new Command(async () => await NavigationService.PushAsync(new RegisterPage()));
-            user = string.Empty;
-            password = string.Empty;
-            rememberMe = true;
-            message = "prueba";
-            IsBusy = true;
-            show = false;
-            this.nav = nav;
         }
 
         #region methods
-        public async void Login()
+        public async Task Login()
         {
             IsBusy = true;
             Title = string.Empty;
@@ -90,13 +85,11 @@ namespace HSTestV2.ViewModels
                 {
                     if (!string.IsNullOrEmpty(password.Trim()))
                     {
-                        //var context = new DbContext();
-                        var usr = new { Id = 1, User = "Guest", Password = "12345", Email = "anemailname@example.com" };
-                        //context.Users.Where(f => f.Name.Equals(_user) || f.Email.Equals(_user)).FirstOrDefault();
+                        var auth = await ApiService.Auth(this);
 
-                        if (usr?.Password == password)
+                        if (auth.Success)
                         {
-                            Settings.IsLoggedIn = usr.Id;
+                            Settings.IsLoggedIn = (rememberMe)? auth.Token : string.Empty;
                             await NavigationService.ChangeToPageAsync(new MainPage());
                         }
                         else
